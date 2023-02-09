@@ -1,5 +1,5 @@
 import React from "react"
-import CloseModalButton from "../CloseModalButton"
+import CloseModalButton from "../../CloseModalButton"
 import { StyledInfo } from "./style"
 
 interface InfoProps {
@@ -12,12 +12,18 @@ export default function Info(props: InfoProps) {
 			<CloseModalButton handleClose={props.setShowInfo} />
 			<h1>Informações</h1>
 			<p>
-				Esta aplicação foi desenvolvida por <a href="https://ilrocha.com">Igor Rocha</a>{" "}
+				Esta aplicação foi desenvolvida por{" "}
+				<a href="https://ilrocha.com" target="_blank">
+					Igor Rocha
+				</a>{" "}
 				como um projeto pessoal.
 			</p>
 			<p>
 				Para mais informações, acesse o repositório do projeto no{" "}
-				<a href="https://github.com/igorroc/start">GitHub</a>.
+				<a href="https://github.com/igorroc/start" target="_blank">
+					GitHub
+				</a>
+				.
 			</p>
 		</StyledInfo>
 	)
