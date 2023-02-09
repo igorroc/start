@@ -83,7 +83,7 @@ export default function BackgroundConfig(props: BackgroundConfigProps) {
 							/>
 							<TextField
 								value={gradientColors[0]}
-								onChange={(e) => handleGradientColors(e, 0)}
+								// onChange={(e) => handleGradientColors(e, 0)}
 							/>
 						</div>
 						<div>
@@ -95,7 +95,7 @@ export default function BackgroundConfig(props: BackgroundConfigProps) {
 							/>
 							<TextField
 								value={gradientColors[1]}
-								onChange={(e) => handleGradientColors(e, 1)}
+								// onChange={(e) => handleGradientColors(e, 1)}
 							/>
 						</div>
 					</>
