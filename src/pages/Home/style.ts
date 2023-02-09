@@ -148,6 +148,7 @@ export const StyledHome = styled("div", {
 				display: "flex",
 				width: "100%",
 				height: "50%",
+				color: "white",
 
 				form: {
 					flex: 1,

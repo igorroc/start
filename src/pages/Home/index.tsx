@@ -2,9 +2,13 @@ import { StyledHome } from "./style"
 import { Icon } from "@iconify/react"
 import { Grow, IconButton, Modal, Paper } from "@mui/material"
 import { useEffect, useState } from "react"
-import Settings from "../../components/Settings"
+
 import { defaultHomeData, HomeDataType, SearchEngineType } from "../../hooks/useHomeData"
-import Info from "../../components/Info"
+
+import Info from "../../components/Modal/Info"
+import Settings from "../../components/Modal/Settings"
+import Weather from "../../components/Modal/Weather"
+import BackgroundConfig from "../../components/Modal/BackgroundConfig"
 
 const searchEngines = [
 	{
@@ -80,6 +84,8 @@ export default function Home() {
 	function handleClose() {
 		setShowSettings(false)
 		setShowInfo(false)
+		setShowWeather(false)
+		setShowBackgroundConfig(false)
 	}
 
 	useEffect(() => {
@@ -116,6 +122,20 @@ export default function Home() {
 					</Paper>
 				</Grow>
 			</Modal>
+			<Modal open={showWeather} onClose={handleClose} className="ModalWrapper">
+				<Grow in={showWeather}>
+					<Paper elevation={20} className="Modal">
+						<Weather setShowWeather={setShowWeather} />
+					</Paper>
+				</Grow>
+			</Modal>
+			<Modal open={showBackgroundConfig} onClose={handleClose} className="ModalWrapper">
+				<Grow in={showBackgroundConfig}>
+					<Paper elevation={20} className="Modal">
+						<BackgroundConfig setShowBackgroundConfig={setShowBackgroundConfig} />
+					</Paper>
+				</Grow>
+			</Modal>
 			<div id="sideNav">
 				<div className="navFlex">
 					<IconButton onClick={() => setShowSettings(!showSettings)}>
@@ -132,7 +152,7 @@ export default function Home() {
 						</IconButton>
 						<span>32°C</span>
 					</div>
-					<IconButton onClick={() => setShowSettings(!showSettings)}>
+					<IconButton onClick={() => setShowBackgroundConfig(!showBackgroundConfig)}>
 						<Icon icon="material-symbols:landscape-rounded" width={24} />
 					</IconButton>
 				</div>
@@ -165,7 +185,7 @@ export default function Home() {
 								value={inputValue}
 								onChange={handleInputChange}
 								id="searchInput"
-								placeholder="Pesquise"
+								placeholder="Digite o que deseja"
 								autoComplete="off"
 							/>
 							<button
