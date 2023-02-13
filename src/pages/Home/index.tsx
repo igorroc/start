@@ -53,7 +53,9 @@ export default function Home() {
 			searchInput.focus()
 		}
 
-		const homeData = localStorage.getItem("homeData")
+		const homeData = null
+		// const homeData = localStorage.getItem("homeData")
+		
 		if (homeData) {
 			const homeDataParsed = JSON.parse(homeData)
 			setHomeData(homeDataParsed)

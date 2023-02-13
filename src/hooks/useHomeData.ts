@@ -43,6 +43,12 @@ const shortcuts = [
 		image: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6cc3c481a15a141738_icon_clyde_white_RGB.png",
 		url: "https://discord.com/app",
 	},
+	{
+		name: "ChatGPT",
+		image: "https://seeklogo.com/images/O/open-ai-logo-8B9BFEDC26-seeklogo.com.png",
+		url: "https://chat.openai.com",
+		turnToWhite: true,
+	},
 ]
 
 export function defaultHomeData() {
